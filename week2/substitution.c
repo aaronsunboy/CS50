@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-bool is_letter(char x);
 bool is_key_alphabet(string key);
 
 int main(int argc, string argv[])
@@ -68,19 +67,6 @@ int main(int argc, string argv[])
     printf("ciphertext: %s\n", code);
 }
 
-bool is_letter(char x)
-{
-    // Is x a letter?
-    if ((x <= 122 && x >= 97) || (x <= 90 && x >= 65))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
 bool is_key_alphabet(string key)
 {
     // check the validity of the key
@@ -91,7 +77,7 @@ bool is_key_alphabet(string key)
     }
     for (int i = 0; i < len; i++)
     {
-        if (!is_letter(key[i])) // Is every character a letter?
+        if (!isalpha(key[i])) // Is every character a letter?
         {
             return false;
         }
